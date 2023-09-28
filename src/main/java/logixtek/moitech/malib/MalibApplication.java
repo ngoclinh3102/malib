@@ -9,5 +9,4 @@ public class MalibApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MalibApplication.class, args);
 	}
-
 }

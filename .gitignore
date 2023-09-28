@@ -35,3 +35,4 @@ build/
 
 ### Others ###
 /src/main/resources/application-dev.properties
+/src/main/resources/launch-ec2-instance-commands

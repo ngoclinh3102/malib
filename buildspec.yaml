@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - echo In the pre_build phase...
+  build:
+    commands:
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn package
+      - mv target/malib-api.jar malib-api.jar
+artifacts:
+  files:
+    - malib-api.jar
+    - .ebextensions/**/*
+    - .platform/**/*

@@ -19,5 +19,6 @@ CREATE TABLE reader
     CONSTRAINT pk_reader PRIMARY KEY (id)
 );
 
-INSERT INTO book VALUES (1, 'ISBN121212', 'A Journey To The Star', 'Matt Zhang', 'New York Times', 122);
+INSERT INTO book VALUES (1, 'ISBN121212', 'A Journey To The Stars', 'Matt Zhang', 'New York Times', 122);
 INSERT INTO book VALUES (2, 'ISBN131313', 'Brown Is Beautiful', 'Helen Whiskey', 'KOA Daily', 92);
+INSERT INTO book VALUES (3, 'ISBN133202', 'The Universe In A Nutshell', 'Stephen Hawking', 'Bantam Spectra', 224);

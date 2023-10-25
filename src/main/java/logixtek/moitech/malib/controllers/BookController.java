@@ -1,5 +1,7 @@
 package logixtek.moitech.malib.controllers;
 
+import jakarta.validation.Valid;
+import logixtek.moitech.malib.models.BookDto;
 import logixtek.moitech.malib.services.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/book")
 public class BookController {
 
-    final BookService bookService;
+    private final BookService bookService;
 
     @GetMapping
     public ResponseEntity<?> getBookList() {
@@ -19,9 +21,7 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addBook(@RequestBody(required = false) String bookName) {
-        return bookName != null
-               ? ResponseEntity.status(HttpStatus.CREATED).body("Add Successfully: " + bookName)
-               : ResponseEntity.status(HttpStatus.BAD_REQUEST).body("not empty bro 69");
+    public ResponseEntity<?> addBook(@RequestBody @Valid BookDto book) {
+        return ResponseEntity.status(HttpStatus.CREATED).body("Add Successfully: " + book.getName());
     }
 }

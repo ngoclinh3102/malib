@@ -1,12 +1,31 @@
 package logixtek.moitech.dev.malib;
 
+import com.amazonaws.services.s3.AmazonS3;
+import logixtek.moitech.malib.services.BookService;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.junit4.SpringRunner;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = MalibApplicationTests.class)
+@ComponentScan(basePackages = "logixtek.moitech.malib")
 class MalibApplicationTests {
 
-	@Test
-	void contextLoads() {}
+	@Autowired
+	BookService bookService;
 
+	@Test
+	void test() {
+		bookService.getBookList().forEach(book -> System.out.println(book.getName()));
+	}
+
+	@Autowired
+	AmazonS3 amazonS3;
+	@Test
+	void testAmazonS3() {
+		amazonS3.createBucket("linh-ne");
+	}
 }

@@ -17,15 +17,16 @@ class MalibApplicationTests {
 	@Autowired
 	BookService bookService;
 
+	@Autowired
+	AmazonS3 amazonS3;
+
 	@Test
 	void test() {
 		bookService.getBookList().forEach(book -> System.out.println(book.getName()));
 	}
 
-	@Autowired
-	AmazonS3 amazonS3;
 	@Test
 	void testAmazonS3() {
-		amazonS3.createBucket("linh-ne");
+		System.out.println(amazonS3.doesBucketExistV2("linh-ne"));
 	}
 }

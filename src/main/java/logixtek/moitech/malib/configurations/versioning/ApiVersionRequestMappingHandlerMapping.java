@@ -1,7 +1,6 @@
 package logixtek.moitech.malib.configurations.versioning;
 
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +10,6 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Method;
 
-@AllArgsConstructor
 class ApiVersionRequestMappingHandlerMapping extends RequestMappingHandlerMapping {
 
     @Override

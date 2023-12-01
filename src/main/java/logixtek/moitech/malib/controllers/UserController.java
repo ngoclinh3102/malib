@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@ApiVersion({1})
 @RequestMapping("/user")
 public class UserController {
-    @ApiVersion({1})
+
+    @ApiVersion({1,2})
     @GetMapping("/{userId}")
     public ResponseEntity<?> getUserV1(@PathVariable @NotEmpty String userId) {
         return ResponseEntity.ok("User V1: " + userId);
     }
 
-    @ApiVersion({2})
     @GetMapping("/{userId}")
     public ResponseEntity<?> getUserV2(@PathVariable @NotEmpty String userId) {
         return ResponseEntity.ok("User V1: " + userId);
     }
 }
-

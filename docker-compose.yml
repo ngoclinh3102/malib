@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: MalibAPI
+    image: malib-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9900:9900"
